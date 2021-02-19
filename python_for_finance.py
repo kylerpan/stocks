@@ -7,7 +7,8 @@ companies = ['AAPL','FB','GOOG','F','TSLA']
 #empty list to add each of the companies
 listofdf = []
 for item in companies:
-    histprices = requests.get(f"https://financialmodelingprep.com/api/v3/historical-price-full/{item}")
+    link = "https://financialmodelingprep.com/api/v3/historical-price-full/{}"
+    histprices = requests.get(link.format(item))
     histprices = histprices.json()
 
 #Parse the API response and select only last 600 days of prices
